@@ -10,7 +10,7 @@ export const Global = createGlobalStyle`
     }
 
     body {
-        background: linear-gradient(180deg, #4568DC 0%, #B06AB3 100%), #EF8E48;
+        background: linear-gradient(rgb(246 246 246) 0%, rgb(254 254 254) 100%), rgb(254 242 234);
         height: 100vh;
         padding: ${Spacing.L} ${Spacing.M};
     }

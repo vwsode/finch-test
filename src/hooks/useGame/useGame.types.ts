@@ -25,6 +25,10 @@ export type FieldType = {
    * The maximum number of selections allowed for this field.
    */
   maxSelection: number;
+  /**
+   * The minimum number of selections.
+   */
+  minSelection?: number;
 };
 
 export type WinningConditions = {
@@ -86,4 +90,7 @@ export type UseGameReturns = {
    * A function to setError.
    */
   setError: Dispatch<SetStateAction<string>>;
+  /**
+   *
+   */
 };

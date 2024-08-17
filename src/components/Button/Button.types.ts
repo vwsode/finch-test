@@ -15,6 +15,10 @@ export type ButtonProps = {
    *
    */
   variant?: ButtonVariant;
+  /**
+   *
+   */
+  isLoading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type StyledButtonProps = {
@@ -26,4 +30,8 @@ export type StyledButtonProps = {
    *
    */
   variant: ButtonVariant;
+  /**
+   *
+   */
+  isLoading: boolean;
 };

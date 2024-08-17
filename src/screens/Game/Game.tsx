@@ -8,9 +8,19 @@ import { Icon } from '../../icons';
 
 import { Bottom, ButtonIcon, ErrorText, Poles, TopTitle } from './Game.styles';
 import { GameProps } from './Game.types';
+import { checkIsValid } from './helpers/checkIsValid';
 
-export const Game: FC<GameProps> = ({ selectedNumber, onSelect, onShowResult, onRandomize, fields, title, error }) => {
-  const isValid = Object.values(selectedNumber).some((numbers) => numbers.length === 0);
+export const Game: FC<GameProps> = ({
+  selectedNumber,
+  onSelect,
+  onShowResult,
+  onRandomize,
+  fields,
+  title,
+  error,
+  isLoading = false,
+}) => {
+  const isValid = !checkIsValid(fields, selectedNumber);
 
   return (
     <>
@@ -44,7 +54,7 @@ export const Game: FC<GameProps> = ({ selectedNumber, onSelect, onShowResult, on
       </Poles>
       <Bottom>
         {error && <ErrorText variant="item-14-20">{error}</ErrorText>}
-        <Button disabled={isValid} onClick={onShowResult}>
+        <Button isLoading={isLoading} disabled={isValid} onClick={onShowResult}>
           Показать результат
         </Button>
       </Bottom>

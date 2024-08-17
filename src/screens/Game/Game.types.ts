@@ -12,6 +12,10 @@ export type Field = {
    */
   maxSelection: number;
   /**
+   * The maximum number of items that can be selected in this field.
+   */
+  minSelection: number;
+  /**
    * The unique identifier for the field, used to reference it programmatically.
    */
   name: string;
@@ -50,4 +54,8 @@ export type GameProps = {
    *
    */
   error?: string;
+  /**
+   *
+   */
+  isLoading?: boolean;
 };

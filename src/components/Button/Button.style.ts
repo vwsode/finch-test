@@ -1,10 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { BorderRadius, BorderWidth, Duration, LineHeight, Spacing } from '../../theme';
 
 import { StyledButtonProps } from './Button.types';
 
 export const StyledButton = styled.button<StyledButtonProps>`
+  display: flex;
+  gap: ${Spacing.XXS};
+  justify-content: center;
+
   cursor: pointer;
   outline: none;
   background-color: ${({ theme }) => theme.colors.basicGrayLight};
@@ -31,14 +35,31 @@ export const StyledButton = styled.button<StyledButtonProps>`
   }
 
   &:disabled {
-    opacity: 0.7;
     cursor: not-allowed;
+    opacity: 0.7;
 
     &:hover {
       background-color: ${({ theme }) => theme.colors.basicGrayLight};
+      border-color: ${({ theme }) => theme.colors.basicGrayLight};
     }
     &:active {
       background-color: ${({ theme }) => theme.colors.basicGrayLight};
+      border-color: ${({ theme }) => theme.colors.basicGrayLight};
     }
   }
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.basicGrayLight};
+        border-color: ${({ theme }) => theme.colors.basicGrayLight};
+      }
+      &:active {
+        background-color: ${({ theme }) => theme.colors.basicGrayLight};
+        border-color: ${({ theme }) => theme.colors.basicGrayLight};
+      }
+    `}
 `;
